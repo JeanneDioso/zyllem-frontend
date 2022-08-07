@@ -1,0 +1,45 @@
+<div>
+    <div id="loader-wrapper" *ngIf="isLoading">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                Gallery
+            </a>
+        </div>
+    </nav>
+
+    <div class="tm-hero d-flex justify-content-center align-items-center">
+        <form class="d-flex tm-search-form">
+            <input class="form-control tm-search-input" type="search" placeholder="Search" [(ngModel)]="searchText"
+                [ngModelOptions]="{standalone: true}" aria-label="Search">
+            <button class="btn btn-outline-success tm-search-btn" type="submit" (click)="search()">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4">
+            <h2 class="col-6 tm-text-primary">
+                All Photos
+            </h2>
+        </div>
+        <div class="row tm-mb-90 tm-gallery">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let item of photoSet.photo" (click)="viewPhoto(item)">
+                <div class="effect-ming tm-video-item" [ngStyle]="{'background-image': 'url(' + (item.url_l ? item.url_l : item.url_m) + ')'}">
+                    <figcaption class="d-flex align-items-center justify-content-center">
+                        <h2>{{item.title}}</h2>
+                    </figcaption>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-view-photo [photo]="photo"></app-view-photo>

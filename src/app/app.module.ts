@@ -5,56 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-
-import { MatRadioModule } from '@angular/material/radio';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
 import { FormsModule } from '@angular/forms';
-import { ZyllemApiService } from './core/services/zyllem-api.service';
-import { ArticlesComponent } from './views/articles/articles.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { ArticleDetailsComponent } from './views/article-details/article-details.component';
-import { ArticleCardComponent } from './views/article-card/article-card-component';
+import { GalleryService } from './core/services/gallery.service';
+import { GalleryComponent } from './views/gallery/gallery.component';
+import { ViewPhotoComponent } from './views/view-photo/view-photo.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlesComponent,
-    ArticleDetailsComponent,
-    ArticleCardComponent
+    GalleryComponent,
+    ViewPhotoComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    MatRadioModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    MatIconModule,
-    MatGridListModule,
-    MatChipsModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatSelectModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [ZyllemApiService],
+  providers: [GalleryService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

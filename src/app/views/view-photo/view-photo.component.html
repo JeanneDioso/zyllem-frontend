@@ -1,0 +1,29 @@
+<div class="modal" *ngIf="showPhoto">
+
+    <span class="close" (click)="close()">&times;</span>
+
+    <div class="container">
+        <div>
+            <img class="modal-content" id="img01" src="{{selected.url_l ? selected.url_l : selected.url_m}}">
+        </div>
+        <div class="details">
+            <p>
+                Title: {{selected.title}}
+            </p>
+            <p>
+                Date Taken: {{selected.dateTaken}}
+            </p>
+            <p>
+                Description: <span [innerHtml]="selected.description._content"></span>
+            </p>
+
+            <p>
+                Owner: <span>{{ selected.ownername }}</span>
+            </p>
+
+            <p>
+                Views: <span>{{ selected.views }}</span>
+            </p>
+        </div>
+    </div>
+</div>

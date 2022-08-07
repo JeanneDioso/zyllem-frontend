@@ -1,5 +1,5 @@
 {
-  "name": "zyllem-front-end-test",
+  "name": "angular-front-end-test",
   "version": "13.3.0",
   "scripts": {
     "ng": "ng",
@@ -25,6 +25,9 @@
     "@angular/platform-browser": "13.3.0",
     "@angular/platform-browser-dynamic": "13.3.0",
     "@angular/router": "13.3.0",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
+    "font-awesome": "^4.7.0",
     "rxjs": "7.5.5",
     "tslib": "2.3.1",
     "zone.js": "0.11.5"
